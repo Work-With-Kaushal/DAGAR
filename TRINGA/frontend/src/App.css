@@ -8,7 +8,6 @@ body {
   padding: 0;
 }
 
-/* Main Content */
 .main-content {
   margin-left: 270px;
   padding: 20px;
@@ -23,7 +22,8 @@ body {
   display: flex;
   align-items: center;
   gap: 20px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.08);
   transition: 0.3s;
 }
 
@@ -54,14 +54,13 @@ body {
   background: #22c55e;
 }
 
-/* Cards */
 .card {
   border: none !important;
   border-radius: 20px !important;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08) !important;
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.08) !important;
 }
 
-/* Images */
 img {
   max-width: 100%;
   height: auto;

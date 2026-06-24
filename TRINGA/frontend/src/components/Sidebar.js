@@ -1,59 +1,48 @@
 function Sidebar() {
+    const isMobile = window.innerWidth <= 768;
+
     return (
         <div
             className="text-white p-4"
             style={{
-                width: "100%",
+                width: isMobile ? "100%" : "250px",
+                height: isMobile ? "auto" : "100vh",
+                position: isMobile ? "relative" : "fixed",
+                left: 0,
+                top: 0,
                 background:
                     "linear-gradient(180deg,#0f172a,#1e3a8a)",
+                overflowY: "auto",
+                zIndex: 1000
             }}
         >
-            <h2
-                style={{
-                    fontWeight: "700",
-                    marginBottom: "5px",
-                }}
-            >
-                🛣️ DAGAR
-            </h2>
+            <h3 className="mb-1">🛣️ DAGAR</h3>
 
             <p
                 style={{
-                    fontSize: "14px",
-                    opacity: 0.8,
-                    marginBottom: "20px",
+                    fontSize: "12px",
+                    opacity: 0.8
                 }}
             >
                 Road Monitoring Portal
             </p>
 
-            <hr
-                style={{
-                    borderColor: "rgba(255,255,255,0.2)",
-                }}
-            />
+            <hr />
 
             <ul
                 className="nav"
                 style={{
-                    display: "flex",
+                    flexDirection: isMobile ? "row" : "column",
                     flexWrap: "wrap",
-                    gap: "12px",
-                    justifyContent: "center",
-                    padding: "10px 0",
+                    gap: "10px"
                 }}
             >
                 <li className="nav-item">
                     <a
                         href="#admin"
                         className="nav-link text-white"
-                        style={{
-                            background: "rgba(255,255,255,0.1)",
-                            borderRadius: "12px",
-                            padding: "10px 18px",
-                        }}
                     >
-                        ⚙️ Admin
+                        ⚙️ Admin Dashboard
                     </a>
                 </li>
 
@@ -61,11 +50,6 @@ function Sidebar() {
                     <a
                         href="#dashboard"
                         className="nav-link text-white"
-                        style={{
-                            background: "rgba(255,255,255,0.1)",
-                            borderRadius: "12px",
-                            padding: "10px 18px",
-                        }}
                     >
                         📊 Dashboard
                     </a>
@@ -75,13 +59,8 @@ function Sidebar() {
                     <a
                         href="#report"
                         className="nav-link text-white"
-                        style={{
-                            background: "rgba(255,255,255,0.1)",
-                            borderRadius: "12px",
-                            padding: "10px 18px",
-                        }}
                     >
-                        🚧 Report
+                        🚧 Report Road
                     </a>
                 </li>
 
@@ -89,11 +68,6 @@ function Sidebar() {
                     <a
                         href="#reports"
                         className="nav-link text-white"
-                        style={{
-                            background: "rgba(255,255,255,0.1)",
-                            borderRadius: "12px",
-                            padding: "10px 18px",
-                        }}
                     >
                         📋 Reports
                     </a>
@@ -103,13 +77,8 @@ function Sidebar() {
                     <a
                         href="#map"
                         className="nav-link text-white"
-                        style={{
-                            background: "rgba(255,255,255,0.1)",
-                            borderRadius: "12px",
-                            padding: "10px 18px",
-                        }}
                     >
-                        🗺️ Map
+                        🗺️ Map View
                     </a>
                 </li>
             </ul>
