@@ -1,0 +1,37 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(
+    135deg,
+    #eef2f7,
+    #d9e4f5
+  );
+  min-height: 100vh;
+}
+
+.card {
+  border: none;
+  border-radius: 18px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.nav-link {
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+h1 {
+  font-weight: 700;
+}
