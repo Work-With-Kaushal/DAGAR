@@ -1,16 +1,19 @@
 function Sidebar() {
+    const isMobile = window.innerWidth <= 768;
+
     return (
         <div
             className="text-white p-4"
             style={{
-                width: "250px",
-                height: "100vh",
-                position: "fixed",
+                width: isMobile ? "100%" : "250px",
+                height: isMobile ? "auto" : "100vh",
+                position: isMobile ? "relative" : "fixed",
                 left: 0,
                 top: 0,
                 background:
                     "linear-gradient(180deg,#0f172a,#1e3a8a)",
-                overflowY: "auto"
+                overflowY: "auto",
+                zIndex: 1000,
             }}
         >
             <h3 className="mb-1">🛣️ DAGAR</h3>
@@ -18,7 +21,7 @@ function Sidebar() {
             <p
                 style={{
                     fontSize: "12px",
-                    opacity: 0.8
+                    opacity: 0.8,
                 }}
             >
                 Road Monitoring Portal
@@ -26,52 +29,43 @@ function Sidebar() {
 
             <hr />
 
-            <ul className="nav flex-column">
-                <li className="nav-item mb-2">
-                    <a
-                        href="#admin"
-                        className="nav-link text-white"
-                    >
-                        ⚙️ Admin Dashboard
+            <ul
+                className="nav"
+                style={{
+                    flexDirection: isMobile ? "row" : "column",
+                    flexWrap: "wrap",
+                    gap: "10px",
+                }}
+            >
+                <li className="nav-item">
+                    <a href="#admin" className="nav-link text-white">
+                        ⚙️ Admin
                     </a>
                 </li>
 
-                <li className="nav-item mb-2">
-                    <a
-                        href="#dashboard"
-                        className="nav-link text-white"
-                    >
+                <li className="nav-item">
+                    <a href="#dashboard" className="nav-link text-white">
                         📊 Dashboard
                     </a>
                 </li>
 
-                <li className="nav-item mb-2">
-                    <a
-                        href="#report"
-                        className="nav-link text-white"
-                    >
-                        🚧 Report Road
+                <li className="nav-item">
+                    <a href="#report" className="nav-link text-white">
+                        🚧 Report
                     </a>
                 </li>
 
-                <li className="nav-item mb-2">
-                    <a
-                        href="#reports"
-                        className="nav-link text-white"
-                    >
+                <li className="nav-item">
+                    <a href="#reports" className="nav-link text-white">
                         📋 Reports
                     </a>
                 </li>
 
-                <li className="nav-item mb-2">
-                    <a
-                        href="#map"
-                        className="nav-link text-white"
-                    >
-                        🗺️ Map View
+                <li className="nav-item">
+                    <a href="#map" className="nav-link text-white">
+                        🗺️ Map
                     </a>
                 </li>
-
             </ul>
         </div>
     );

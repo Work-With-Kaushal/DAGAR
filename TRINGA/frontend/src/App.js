@@ -69,12 +69,7 @@ function App() {
     <>
       <Sidebar />
 
-      <div
-        style={{
-          marginLeft: "270px",
-          padding: "20px",
-        }}
-      >
+      <div className="main-content">
         {/* Hero Section */}
         <div id="dashboard">
           <div
