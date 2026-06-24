@@ -42,7 +42,7 @@ function Sidebar() {
                         href="#admin"
                         className="nav-link text-white"
                     >
-                        ⚙️ Admin Dashboard
+                        ⚙️ Admin
                     </a>
                 </li>
 

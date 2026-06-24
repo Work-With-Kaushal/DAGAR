@@ -161,7 +161,7 @@ function App() {
           {adminLoggedIn ? (
             <>
               <div className="d-flex justify-content-between align-items-center mb-3">
-                <h3>⚙️ Admin Dashboard</h3>
+                <h3>⚙️ Admin</h3>
 
                 <button
                   className="btn btn-danger"
