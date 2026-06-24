@@ -70,18 +70,15 @@ function App() {
       <Sidebar />
 
       <div className="main-content">
-        {/* Hero Section */}
+
+        {/* Dashboard */}
         <div id="dashboard">
           <div
             className="card shadow-lg mb-5"
-            style={{
-              borderRadius: "20px",
-            }}
+            style={{ borderRadius: "20px" }}
           >
             <div className="card-body text-center p-5">
-              <h1 className="display-3">
-                𝐃𝐀𝐆𝐀𝐑
-              </h1>
+              <h1 className="display-3">𝐃𝐀𝐆𝐀𝐑</h1>
 
               <p className="lead">
                 Smart Road Damage Reporting & Monitoring
@@ -98,14 +95,11 @@ function App() {
           </div>
         </div>
 
-        {/* Dashboard Statistics */}
+        {/* Statistics */}
         <DashboardStats />
 
         {/* Report Form */}
-        <div
-          id="report"
-          className="card p-4 mb-5"
-        >
+        <div id="report" className="card p-4 mb-5">
           <h3 className="mb-3">
             🚧 Report Road Damage
           </h3>
@@ -162,47 +156,33 @@ function App() {
 
         <hr className="my-5" />
 
-        {/* Admin Dashboard */}
+        {/* Admin */}
         <div id="admin">
-
           {adminLoggedIn ? (
-
             <>
               <div className="d-flex justify-content-between align-items-center mb-3">
-
-                <h3>
-                  ⚙️ Admin Dashboard
-                </h3>
+                <h3>⚙️ Admin Dashboard</h3>
 
                 <button
                   className="btn btn-danger"
                   onClick={() => {
-
                     localStorage.removeItem(
                       "adminLoggedIn"
                     );
-
                     setAdminLoggedIn(false);
-
                   }}
                 >
                   Logout
                 </button>
-
               </div>
 
               <AdminDashboard />
-
             </>
-
           ) : (
-
             <AdminLogin
               onLogin={setAdminLoggedIn}
             />
-
           )}
-
         </div>
 
         {/* Footer */}

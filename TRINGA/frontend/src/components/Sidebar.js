@@ -1,68 +1,114 @@
 function Sidebar() {
-    const isMobile = window.innerWidth <= 768;
-
     return (
         <div
             className="text-white p-4"
             style={{
-                width: isMobile ? "100%" : "250px",
-                height: isMobile ? "auto" : "100vh",
-                position: isMobile ? "relative" : "fixed",
-                left: 0,
-                top: 0,
+                width: "100%",
                 background:
                     "linear-gradient(180deg,#0f172a,#1e3a8a)",
-                overflowY: "auto",
-                zIndex: 1000,
             }}
         >
-            <h3 className="mb-1">🛣️ DAGAR</h3>
+            <h2
+                style={{
+                    fontWeight: "700",
+                    marginBottom: "5px",
+                }}
+            >
+                🛣️ DAGAR
+            </h2>
 
             <p
                 style={{
-                    fontSize: "12px",
+                    fontSize: "14px",
                     opacity: 0.8,
+                    marginBottom: "20px",
                 }}
             >
                 Road Monitoring Portal
             </p>
 
-            <hr />
+            <hr
+                style={{
+                    borderColor: "rgba(255,255,255,0.2)",
+                }}
+            />
 
             <ul
                 className="nav"
                 style={{
-                    flexDirection: isMobile ? "row" : "column",
+                    display: "flex",
                     flexWrap: "wrap",
-                    gap: "10px",
+                    gap: "12px",
+                    justifyContent: "center",
+                    padding: "10px 0",
                 }}
             >
                 <li className="nav-item">
-                    <a href="#admin" className="nav-link text-white">
+                    <a
+                        href="#admin"
+                        className="nav-link text-white"
+                        style={{
+                            background: "rgba(255,255,255,0.1)",
+                            borderRadius: "12px",
+                            padding: "10px 18px",
+                        }}
+                    >
                         ⚙️ Admin
                     </a>
                 </li>
 
                 <li className="nav-item">
-                    <a href="#dashboard" className="nav-link text-white">
+                    <a
+                        href="#dashboard"
+                        className="nav-link text-white"
+                        style={{
+                            background: "rgba(255,255,255,0.1)",
+                            borderRadius: "12px",
+                            padding: "10px 18px",
+                        }}
+                    >
                         📊 Dashboard
                     </a>
                 </li>
 
                 <li className="nav-item">
-                    <a href="#report" className="nav-link text-white">
+                    <a
+                        href="#report"
+                        className="nav-link text-white"
+                        style={{
+                            background: "rgba(255,255,255,0.1)",
+                            borderRadius: "12px",
+                            padding: "10px 18px",
+                        }}
+                    >
                         🚧 Report
                     </a>
                 </li>
 
                 <li className="nav-item">
-                    <a href="#reports" className="nav-link text-white">
+                    <a
+                        href="#reports"
+                        className="nav-link text-white"
+                        style={{
+                            background: "rgba(255,255,255,0.1)",
+                            borderRadius: "12px",
+                            padding: "10px 18px",
+                        }}
+                    >
                         📋 Reports
                     </a>
                 </li>
 
                 <li className="nav-item">
-                    <a href="#map" className="nav-link text-white">
+                    <a
+                        href="#map"
+                        className="nav-link text-white"
+                        style={{
+                            background: "rgba(255,255,255,0.1)",
+                            borderRadius: "12px",
+                            padding: "10px 18px",
+                        }}
+                    >
                         🗺️ Map
                     </a>
                 </li>
