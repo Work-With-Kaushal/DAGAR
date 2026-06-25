@@ -1,87 +1,143 @@
+import { useState, useEffect } from "react";
+
 function Sidebar() {
-    const isMobile = window.innerWidth <= 768;
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
+
+    const links = [
+        {
+            href: "#dashboard",
+            icon: "📊",
+            text: "Dashboard",
+        },
+        {
+            href: "#report",
+            icon: "🚧",
+            text: "Report",
+        },
+        {
+            href: "#reports",
+            icon: "📋",
+            text: "Reports",
+        },
+        {
+            href: "#map",
+            icon: "🗺️",
+            text: "Map",
+        },
+        {
+            href: "#admin",
+            icon: "⚙️",
+            text: "Admin",
+        },
+    ];
 
     return (
         <div
-            className="text-white p-4"
             style={{
                 width: isMobile ? "100%" : "250px",
                 height: isMobile ? "auto" : "100vh",
                 position: isMobile ? "relative" : "fixed",
                 left: 0,
                 top: 0,
-                background:
-                    "linear-gradient(180deg,#0f172a,#1e3a8a)",
+                background: "linear-gradient(180deg,#0f172a,#1e3a8a)",
+                padding: "20px",
                 overflowY: "auto",
-                zIndex: 1000
+                zIndex: 1000,
+                boxShadow: "0 8px 25px rgba(0,0,0,.25)",
             }}
         >
-            <h3 className="mb-1">🛣️ DAGAR</h3>
+            <h2
+                style={{
+                    color: "#fff",
+                    textAlign: "center",
+                    marginBottom: "5px",
+                    fontWeight: "700",
+                    letterSpacing: "1px",
+                }}
+            >
+                🛣️ DAGAR
+            </h2>
 
             <p
                 style={{
-                    fontSize: "12px",
-                    opacity: 0.8
+                    color: "#cbd5e1",
+                    textAlign: "center",
+                    fontSize: "13px",
+                    marginBottom: "25px",
                 }}
             >
-                Road Monitoring Portal
+                Smart Road Monitoring Portal
             </p>
 
-            <hr />
-
-            <ul
-                className="nav"
+            <div
                 style={{
-                    flexDirection: isMobile ? "row" : "column",
-                    flexWrap: "wrap",
-                    gap: "10px"
+                    display: "grid",
+                    gridTemplateColumns: isMobile
+                        ? "repeat(2,1fr)"
+                        : "1fr",
+                    gap: "14px",
                 }}
             >
-                <li className="nav-item">
+                {links.map((item) => (
                     <a
-                        href="#admin"
-                        className="nav-link text-white"
+                        key={item.href}
+                        href={item.href}
+                        style={{
+                            textDecoration: "none",
+                            color: "#fff",
+                            background: "rgba(255,255,255,.12)",
+                            padding: "16px",
+                            borderRadius: "18px",
+                            textAlign: "center",
+                            fontWeight: "600",
+                            transition: "0.3s",
+                            backdropFilter: "blur(10px)",
+                            WebkitBackdropFilter: "blur(10px)",
+                            boxShadow: "0 6px 15px rgba(0,0,0,.15)",
+                        }}
+                        onMouseEnter={(e) => {
+                            e.currentTarget.style.background = "#2563eb";
+                            e.currentTarget.style.transform =
+                                "translateY(-3px)";
+                        }}
+                        onMouseLeave={(e) => {
+                            e.currentTarget.style.background =
+                                "rgba(255,255,255,.12)";
+                            e.currentTarget.style.transform =
+                                "translateY(0)";
+                        }}
                     >
-                        ⚙️ Admin
-                    </a>
-                </li>
+                        <div
+                            style={{
+                                fontSize: "26px",
+                                marginBottom: "8px",
+                            }}
+                        >
+                            {item.icon}
+                        </div>
 
-                <li className="nav-item">
-                    <a
-                        href="#dashboard"
-                        className="nav-link text-white"
-                    >
-                        📊 Dashboard
+                        <div
+                            style={{
+                                fontSize: "15px",
+                            }}
+                        >
+                            {item.text}
+                        </div>
                     </a>
-                </li>
-
-                <li className="nav-item">
-                    <a
-                        href="#report"
-                        className="nav-link text-white"
-                    >
-                        🚧 Report Road
-                    </a>
-                </li>
-
-                <li className="nav-item">
-                    <a
-                        href="#reports"
-                        className="nav-link text-white"
-                    >
-                        📋 Reports
-                    </a>
-                </li>
-
-                <li className="nav-item">
-                    <a
-                        href="#map"
-                        className="nav-link text-white"
-                    >
-                        🗺️ Map View
-                    </a>
-                </li>
-            </ul>
+                ))}
+            </div>
         </div>
     );
 }
